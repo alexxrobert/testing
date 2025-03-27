@@ -87,3 +87,6 @@ jobs:
         pytest verify_sb.py
     - name: Print custom data
       run: echo "${{ github.event.client_payload.custom_data }}"
+    - name: Test undetected
+      run: |
+        python verify_undetected.py
