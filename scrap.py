@@ -8,7 +8,7 @@ SCREENSHOT_DIR = "screenshots"
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
 START_URL = "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
-OUTPUT_FILE = "leroymerlin_products.csv"
+OUTPUT_FILE = "screenshots/leroymerlin_products.csv"
 
 def extract_products(driver):
     driver.wait_for_element("div.product-list", timeout=10)
