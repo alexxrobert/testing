@@ -4,10 +4,12 @@ from sbvirtualdisplay import Display
 import time
 import csv
 import os
+
 SCREENSHOT_DIR = "screenshots"
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
-START_URL = "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
+START_URL = \
+    "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
 OUTPUT_FILE = "leroymerlin_products.csv"
 
 
@@ -18,8 +20,11 @@ def extract_products(driver):
 
     for card in cards:
         try:
-            name = card.find_element("css selector", ".product-title").text.strip()
-            price = card.find_element("css selector", ".product-price .price-amount").text.strip()
+            name = card.find_element("css selector",
+                                     ".product-title").text.strip()
+            price = \
+                card.find_element("css selector",
+                     ".product-price .price-amount").text.strip()
             products.append((name, price))
         except Exception as e:
             print("⚠️ Skipping product due to error:", e)
@@ -29,7 +34,8 @@ def extract_products(driver):
 
 def go_to_next_page(driver):
     try:
-        next_button = driver.find_element("css selector", 'a[aria-label="Următoarea pagină"]')
+        next_button = driver.find_element("css selector",
+                                          'a[aria-label="Următoarea pagină"]')
         if "disabled" not in next_button.get_attribute("class"):
             driver.execute_script("arguments[0].scrollIntoView();", next_button)
             next_button.click()
