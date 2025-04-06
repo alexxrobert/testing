@@ -4,10 +4,7 @@ from contextlib import suppress
 from seleniumbase import decorators
 from seleniumbase.core import sb_cdp
 from seleniumbase.undetected import cdp_driver
-import os
 
-SCREENSHOT_DIR = "screenshots"
-os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
 START_URL = \
     "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
@@ -26,10 +23,8 @@ def main():
     sb.sleep(2.5)
     sb.internalize_links()  # Don't open links in a new tab
     sb.sleep(3)
-    screenshot_name = "screenshot_page_0.png"
-    screenshot_path = os.path.join(SCREENSHOT_DIR, screenshot_name)
-    sb.save_screenshot(screenshot_path)
-    print("\nScreenshot saved to: %s\n" % screenshot_path)
+    sb.save_screenshot("now_secure_image.png")
+    print("\nScreenshot saved to: %s\n" % "now_secure_image.png")
 
 
 if __name__ == "__main__":
