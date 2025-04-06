@@ -89,4 +89,4 @@ jobs:
       run: echo "${{ github.event.client_payload.custom_data }}"
     - name: Test undetected
       run: |
-        python verify_undetected.py
+        python verify_undetected_xvfb.py
