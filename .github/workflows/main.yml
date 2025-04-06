@@ -90,3 +90,8 @@ jobs:
     - name: Test undetected
       run: |
         python verify_undetected_xvfb.py
+    - name: Upload screenshot artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: now_secure_screenshot
+        path: now_secure_image.png
