@@ -26,7 +26,7 @@ def main():
     sb.sleep(2.5)
     sb.internalize_links()  # Don't open links in a new tab
     sb.sleep(3)
-    screenshot_name = f"screenshot_page_0.png"
+    screenshot_name = "screenshot_page_0.png"
     screenshot_path = os.path.join(SCREENSHOT_DIR, screenshot_name)
     sb.save_screenshot(screenshot_path)
     print("\nScreenshot saved to: %s\n" % screenshot_path)
