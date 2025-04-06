@@ -64,10 +64,12 @@ def main():
             screenshot_path = os.path.join(SCREENSHOT_DIR, screenshot_name)
             driver.save_screenshot(screenshot_path)
             print("\nScreenshot saved to: %s\n" % screenshot_path)
-            products = extract_products(driver)
-            all_products.extend(products)
-            print(f"✅ Found {len(products)} products on page {page_num}")
-
+            try:
+                products = extract_products(driver)
+                all_products.extend(products)
+                print(f"✅ Found {len(products)} products on page {page_num}")
+            except Exception:
+                break
             if not go_to_next_page(driver):
                 break
             page_num += 1
