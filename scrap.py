@@ -8,7 +8,8 @@ SCREENSHOT_DIR = "screenshots"
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
 START_URL = "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
-OUTPUT_FILE = "screenshots/leroymerlin_products.csv"
+OUTPUT_FILE = "leroymerlin_products.csv"
+
 
 def extract_products(driver):
     driver.wait_for_element("div.product-list", timeout=10)
@@ -25,6 +26,7 @@ def extract_products(driver):
 
     return products
 
+
 def go_to_next_page(driver):
     try:
         next_button = driver.find_element("css selector", 'a[aria-label="Următoarea pagină"]')
@@ -36,6 +38,7 @@ def go_to_next_page(driver):
     except NoSuchElementException:
         pass
     return False
+
 
 def main():
     # Start SeleniumBase's virtual display (uses Xvfb)
@@ -72,6 +75,7 @@ def main():
             writer.writerows(all_products)
 
         print(f"\n🎉 Done! Saved {len(all_products)} products to {OUTPUT_FILE}")
+
 
 if __name__ == "__main__":
     main()
