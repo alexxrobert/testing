@@ -6,7 +6,7 @@ from sbvirtualdisplay import Display
 
 def verify_success(driver):
     page_actions.wait_for_text(
-        driver, "OH YEAH, you passed!", "h1", by="css selector"
+        driver, "NOWSECURE", "h2", by="css selector"
     )
     print("\n Success! Website did not detect Selenium!")
 
