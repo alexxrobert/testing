@@ -89,7 +89,7 @@ jobs:
       run: echo "${{ github.event.client_payload.custom_data }}"
     - name: Test undetected
       run: |
-        python scrap.py
+        python cdp.py
     - name: all-screenshots
       uses: actions/upload-artifact@v4
       with:
