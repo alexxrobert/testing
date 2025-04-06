@@ -1,8 +1,8 @@
 from seleniumbase import SB
 
 START_URL = \
-    "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
-
+    //"https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477"
+    "https://www.leroymerlin.ro/produse/pereti-despartitori-si-tavane/477/data.json"
 with SB(uc=True, test=True, locale_code="en") as sb:
     sb.activate_cdp_mode(START_URL)
     sb.sleep(2.5)
