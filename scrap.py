@@ -24,7 +24,7 @@ def extract_products(driver):
                                      ".product-title").text.strip()
             price = \
                 card.find_element("css selector",
-                     ".product-price .price-amount").text.strip()
+                                  ".product-price .price-amount").text.strip()
             products.append((name, price))
         except Exception as e:
             print("⚠️ Skipping product due to error:", e)
@@ -37,7 +37,8 @@ def go_to_next_page(driver):
         next_button = driver.find_element("css selector",
                                           'a[aria-label="Următoarea pagină"]')
         if "disabled" not in next_button.get_attribute("class"):
-            driver.execute_script("arguments[0].scrollIntoView();", next_button)
+            driver.execute_script("arguments[0].scrollIntoView();",
+                                  next_button)
             next_button.click()
             time.sleep(2)
             return True
