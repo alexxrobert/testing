@@ -89,9 +89,9 @@ jobs:
       run: echo "${{ github.event.client_payload.custom_data }}"
     - name: Test undetected
       run: |
-        python verify_undetected_xvfb.py
-    - name: Upload screenshot artifact
+        python scrap.py
+    - name: all-screenshots
       uses: actions/upload-artifact@v4
       with:
         name: now_secure_screenshot
-        path: now_secure_image.png
+        path: screenshots/
